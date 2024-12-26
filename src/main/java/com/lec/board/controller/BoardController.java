@@ -10,7 +10,7 @@ public class BoardController {
 
 	@GetMapping("/list")
 	public String list() {
-		return "<h1 align=\"center\">Board List.... docker image에서 실행</h1>";
+		return "<h1 align=\"center\">Board List....</h1><br><h3>3rd build</h3>";
 	}
 	
 	@GetMapping("/getBoard")
