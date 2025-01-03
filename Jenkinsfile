@@ -22,15 +22,8 @@ pipeline {
                     
                     git clone -b master https://github.com/inwookbaek/20240809_green_cicd.git myproject
                     '''
-                }              
+                }
             }
-
-            steps {
-                script {  
-                    git branch: 'master',
-                        url 'https://github.com/inwookbaek/20240809_green_cicd.git myproject'
-                }                
-            }            
         }
 
         stage('Check if App is Running') {
@@ -111,5 +104,6 @@ pipeline {
                 }
             }
         }
+
     }             
 }
