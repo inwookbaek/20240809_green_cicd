@@ -10,7 +10,7 @@ public class BoardController {
 
 	@GetMapping("/list")
 	public String list() {
-		return "<h1 align=\"center\">최종테스트 Last!!!!! - Board List....</h1>";
+		return "<h1 align=\"center\" style="color: 'red'">최종테스트 Last!!!!! - Board List....</h1>";
 	}
 	
 	@GetMapping("/getBoard")
