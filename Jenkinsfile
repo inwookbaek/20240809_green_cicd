@@ -68,15 +68,16 @@ pipeline {
         stage('Docker Image Build!!') {
             steps {
                 script {
-                    sh '''
-                      # pwd 
-                      # ls
-                      try {
+                    try {
+                      sh '''
+                        # pwd 
+                        # ls
                         docker rm -f $(sudo docker ps -aq)
-                        docker rmi $(sudo docker images -q)                      
-                      } catch(e) {
-                        echo "docker container or image delete fail!!"
-                      }
+                        docker rmi $(sudo docker images -q) \
+                     } catch(e) {
+                       echo "docker container or image delete fail!!"
+                     }                    
+                    sh '''
                       docker build -t spring-boot .
                       docker run -dit --name webapp -p 9090:8090 spring-boot
                     '''
