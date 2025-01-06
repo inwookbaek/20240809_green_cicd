@@ -99,15 +99,16 @@ pipeline {
                       sh '''
                         # pwd 
                         # ls
-                        docker rm -f $(sudo docker ps -aq)
-                        docker rmi $(sudo docker images -q)
+                        sudo docker rm -f $(sudo docker ps -aq)
+                        sudo docker rmi $(sudo docker images -q)
                       '''
                      } catch(e) {
                        echo "docker container or image delete fail!!"
                      }                    
                     sh '''
-                      docker build -t spring-boot .
-                      docker run -dit --name webapp -p 9090:8090 spring-boot
+                      echo "docker image build & docker run!!!!"
+                      sudo docker build -t spring-boot .
+                      sudo docker run -dit --name webapp -p 9090:8090 spring-boot
                     '''
                 }
             }
