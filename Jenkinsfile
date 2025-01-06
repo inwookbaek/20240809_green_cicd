@@ -99,8 +99,8 @@ pipeline {
                       sh '''
                         # pwd 
                         # ls
-                        sudo docker rm -f $(sudo docker ps -aq)
-                        sudo docker rmi $(sudo docker images -q)
+                        # sudo docker rmi $(sudo docker images -q)
+                        # sudo docker rm -f $(sudo docker ps -aq)
                       '''
                      } catch(e) {
                        echo "docker container or image delete fail!!"
