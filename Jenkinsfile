@@ -75,6 +75,7 @@ pipeline {
                       sudo docker rmi $(sudo docker images -q)
                       sudo docker build 
                       sudo docker build -t spring-boot .
+                      sudo docker run -dit --name webapp -p 9090:8090 spring-boot
                     '''
                 }
             }
