@@ -64,27 +64,7 @@ pipeline {
                 }
             }
         }  
-
-        stage('Docker Image Build!!') {
-            steps {
-                script {
-                    try {
-                      sh '''
-                        # pwd 
-                        # ls
-                        docker rm -f $(sudo docker ps -aq)
-                        docker rmi $(sudo docker images -q) \
-                     } catch(e) {
-                       echo "docker container or image delete fail!!"
-                     }                    
-                    sh '''
-                      docker build -t spring-boot .
-                      docker run -dit --name webapp -p 9090:8090 spring-boot
-                    '''
-                }
-            }
-        }   
-
+        
         stage('Run Java App in Background') {
             steps {
                 script {
@@ -111,5 +91,26 @@ pipeline {
                 }
             }
         }
+
+        stage('Docker Image Build!!') {
+            steps {
+                script {
+                    try {
+                      sh '''
+                        # pwd 
+                        # ls
+                        docker rm -f $(sudo docker ps -aq)
+                        docker rmi $(sudo docker images -q)
+                      '''
+                     } catch(e) {
+                       echo "docker container or image delete fail!!"
+                     }                    
+                    sh '''
+                      docker build -t spring-boot .
+                      docker run -dit --name webapp -p 9090:8090 spring-boot
+                    '''
+                }
+            }
+        }          
     }             
 }
