@@ -42,7 +42,7 @@ pipeline {
             }
         }
 
-        stage('Change Directory and Build') {
+        stage('Change Directory and SpringBoot App Build') {
             steps {
                 script {
                     // Change to the "myproject" directory and perform a task
@@ -71,9 +71,12 @@ pipeline {
                     sh '''
                       # pwd 
                       # ls
-                      docker rm -f $(sudo docker ps -aq)
-                      docker rmi $(sudo docker images -q)
-                      docker build 
+                      try {
+                        docker rm -f $(sudo docker ps -aq)
+                        docker rmi $(sudo docker images -q)                      
+                      } catch(e) {
+                        echo "docker container or image delete fail!!"
+                      }
                       docker build -t spring-boot .
                       docker run -dit --name webapp -p 9090:8090 spring-boot
                     '''
