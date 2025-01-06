@@ -65,18 +65,20 @@ pipeline {
             }
         }  
 
-        stage('Doker image Build') {
+        stage('Docker Image Build!!') {
             steps {
                 script {
-                    // Change to the "myproject" directory and perform a task
                     sh '''
-                    # 필요한 빌드 명령 실행 (예: Docker 빌드, Gradle, Maven 등)
-                    # 예: Docker 빌드
-                    # docker build -t spring-boot .
+                      pwd 
+                      ls
+                      sudo docker rm -f $(sudo docker ps -aq)
+                      sudo docker rmi $(sudo docker images -q)
+                      sudo docker build 
+                      sudo docker build -t spring-boot .
                     '''
                 }
             }
-        }  
+        }   
 
         stage('Run Java App in Background') {
             steps {
@@ -104,6 +106,5 @@ pipeline {
                 }
             }
         }
-
     }             
 }
