@@ -69,13 +69,13 @@ pipeline {
             steps {
                 script {
                     sh '''
-                      pwd 
-                      ls
-                      sudo docker rm -f $(sudo docker ps -aq)
-                      sudo docker rmi $(sudo docker images -q)
-                      sudo docker build 
-                      sudo docker build -t spring-boot .
-                      sudo docker run -dit --name webapp -p 9090:8090 spring-boot
+                      # pwd 
+                      # ls
+                      docker rm -f $(sudo docker ps -aq)
+                      docker rmi $(sudo docker images -q)
+                      docker build 
+                      docker build -t spring-boot .
+                      docker run -dit --name webapp -p 9090:8090 spring-boot
                     '''
                 }
             }
