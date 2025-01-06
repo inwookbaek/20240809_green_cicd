@@ -19,7 +19,7 @@ public class BoardController {
 	}
 	
 	@GetMapping("/jenkins")
-	public String getBoard() {
+	public String testJenkins() {
 		return "<h1>Jenkins CI/CD Test ....</h1>";
 	}	
 }
