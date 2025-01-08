@@ -95,6 +95,7 @@ pipeline {
         stage('Docker Image Build!!') {
             steps {
                 script {
+                    cd ./myproject
                     try {
                       sh '''
                         pwd 
