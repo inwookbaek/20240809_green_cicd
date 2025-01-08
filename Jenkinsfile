@@ -70,7 +70,7 @@ pipeline {
                 script {
                     sh '''
                     # Navigate to the project directory
-                    cd ./build/libs
+                    cd ./myproject/build/libs
                     # pwd 
                     # ls
                     
