@@ -98,8 +98,8 @@ pipeline {
                     try {
                       sh '''
                         cd ./myproject
-                        pwd 
-                        ls
+                        # pwd 
+                        # ls
                         # sudo docker rmi $(sudo docker images -q)
                         # sudo docker rm -f $(sudo docker ps -aq)
                       '''
