@@ -107,8 +107,8 @@ pipeline {
                      }                    
                     sh '''
                       echo "docker image build & docker run!!!!"
-                      # sudo docker build -t spring-boot .
-                      # sudo docker run -dit --name webapp -p 9090:8090 spring-boot
+                      sudo docker build -t spring-boot .
+                      sudo docker run -dit --name webapp -p 9090:8090 spring-boot
                     '''
                 }
             }
