@@ -98,7 +98,7 @@ pipeline {
                     try {
                       sh '''
                         cd ./myproject
-                        # pwd 
+                        pwd 
                         # ls
                         # sudo docker rmi $(sudo docker images -q)
                         # sudo docker rm -f $(sudo docker ps -aq)
