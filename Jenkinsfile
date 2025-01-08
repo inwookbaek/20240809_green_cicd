@@ -20,7 +20,7 @@ pipeline {
                         rm -rf ./myproject
                     fi
                     
-                    git clone -b master https://github.com/inwookbaek/20240809_green_cicd.git myproject
+                    git clone -b master https://github.com/inwookbaek/20240809_green_cicd.git
                     '''
                 }
             }
@@ -70,7 +70,7 @@ pipeline {
                 script {
                     sh '''
                     # Navigate to the project directory
-                    cd myproject/build/libs
+                    cd ./build/libs
                     # pwd 
                     # ls
                     
