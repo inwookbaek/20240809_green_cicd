@@ -95,21 +95,21 @@ pipeline {
         stage('Docker Image Build!!') {
             steps {
                 script {
-                    try {
-                      sh '''
-                        cd ./myproject
-                        pwd 
-                        # ls
-                        # sudo docker rmi $(sudo docker images -q)
-                        # sudo docker rm -f $(sudo docker ps -aq)
-                      '''
-                     } catch(e) {
+                    # try {
+                    #   sh '''
+                    #     cd ./myproject
+                    #     pwd 
+                    #     # ls
+                    #     # sudo docker rmi $(sudo docker images -q)
+                    #     # sudo docker rm -f $(sudo docker ps -aq)
+                    #   '''
+                    #  } catch(e) {
                        echo "docker container or image delete fail!!"
-                     }                    
-                    sh '''
-                      echo "docker image build & docker run!!!!"
-                      docker build -t spring-board .
-                      docker run -dit --name webapp -p 9090:8090 spring-board
+                    #  }                    
+                    # sh '''
+                    #   echo "docker image build & docker run!!!!"
+                    #   docker build -t spring-board .
+                    #   docker run -dit --name webapp -p 9090:8090 spring-board
                     '''
                 }
             }
