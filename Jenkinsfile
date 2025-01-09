@@ -110,7 +110,7 @@ pipeline {
                     #   echo "docker image build & docker run!!!!"
                     #   docker build -t spring-board .
                     #   docker run -dit --name webapp -p 9090:8090 spring-board
-                    '''
+                    # '''
                 }
             }
         }          
